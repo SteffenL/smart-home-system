@@ -1,0 +1,30 @@
+extends ../layout/main
+
+block content
+  .section
+    .container
+      h1.title Log in
+      h2.subtitle Log in with a local account.
+      form(method="post" action="/auth/login/local")
+        input(type="hidden" name="_csrf" value=csrfToken)
+        .field
+          .control
+            input.input(name="username" type="text" placeholder="username" value=input.username)
+        .field
+          .control
+            input.input(name="password" type="password" placeholder="password")
+        .buttons
+          button.button Continue
+
+block append modals
+  if failed
+    .modal.is-active
+      .modal-background
+      .modal-card
+        header.modal-card-head
+          p.modal-card-title Access denied
+          button.delete(aria-label="close")
+        section.modal-card-body
+          p Please make sure that your credentials are correct.
+        footer.modal-card-foot
+          a(href="/support") Need help?

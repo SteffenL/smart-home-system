@@ -1,0 +1,48 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width initial-scale=1.0")
+    link(rel="stylesheet" href="/assets/style/main.css")
+    script(type="module" src="/assets/scripts/main.js")
+    block scripts
+    title Smart Home System
+  body
+    header
+      nav.navbar(role="navigation" aria-label="main navigation")
+        .navbar-brand
+          a.navbar-item(href="/")
+            img(src="/assets/images/brand.svg" width="112" height="28")
+          a.navbar-burger(role="button" aria-label="menu" aria-expanded="false" data-target="nav-menu")
+            span(aria-hidden="true")
+            span(aria-hidden="true")
+            span(aria-hidden="true")
+        #nav-menu.navbar-menu
+          .navbar-start
+            a.navbar-item(href="/") Dashboard
+          .navbar-end
+            .navbar-item
+              if user
+                .is-hidden-touch= user.username
+            .navbar-item
+              if user
+                button.button.js-modal-trigger(data-target="logout-modal") Log out
+              else
+                a(href="/auth/login" class="button") Log in
+    main
+      block content
+    block modals
+      #logout-modal.modal
+        .modal-background
+        .modal-card
+          header.modal-card-head
+            p.modal-card-title Log out
+            button.delete(aria-label="close")
+          section.modal-card-body
+            p Please confirm that you wish to log out.
+          footer.modal-card-foot
+            button#logout-confirm-button.button.is-success Log out
+            button.button Cancel
+          form#logout-form(method="post" action="/auth/logout")
+            input(type="hidden" name="_csrf" value=csrfToken)

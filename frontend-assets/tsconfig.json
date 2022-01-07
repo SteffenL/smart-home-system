@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "declarationMap": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "removeComments": true,
+    "sourceMap": false,
+    "strict": true,
+    "target": "es2015"
+  },
+  "include": [
+    "./scripts/**/*.ts"
+  ]
+}
