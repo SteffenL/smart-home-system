@@ -6,7 +6,10 @@ export type SessionConfig = {
 };
 
 export type HttpServerConfig = {
+    hostname: string;
     port: number;
+    useContentSecurityPolicy: boolean;
+    useSecureCookies: boolean;
 };
 
 export type UserConfig = {

@@ -18,10 +18,12 @@ app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 app.set("trust proxy", ["loopback", "linklocal", "uniquelocal"]);
 
-app.use(helmet());
+app.use(helmet({
+    contentSecurityPolicy: appConfig.httpServer.useContentSecurityPolicy
+}));
 app.use("/assets", express.static(frontendAssetsDir));
 app.use(cookieParser(appConfig.session.secret));
-app.use(httpSession(appConfig.session));
+app.use(httpSession(appConfig));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(localsAppConfig(appConfig));
