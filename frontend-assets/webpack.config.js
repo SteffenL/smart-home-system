@@ -4,10 +4,13 @@ const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
     mode: "production",
     target: "web",
-    entry: "./scripts/main.ts",
+    entry: {
+        main: "./scripts/main.ts",
+        dashboard: "./scripts/dashboard.ts"
+    },
     output: {
         path: path.resolve(__dirname, "dist", "scripts"),
-        filename: "main.js"
+        filename: "[name].js"
     },
     module: {
         rules: [

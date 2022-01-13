@@ -2,7 +2,7 @@ import { $ } from "./dom";
 import { ApiClient } from "./api";
 import { Device, DeviceType } from "@langnes/smart-home-system-shared/domain";
 
-export async function initDashboard() {
+document.addEventListener("DOMContentLoaded", async () => {
     const api = new ApiClient();
 
     const ui = {
@@ -87,4 +87,4 @@ export async function initDashboard() {
     });
 
     await fetchDevices();
-};
+});
