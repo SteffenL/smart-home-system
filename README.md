@@ -56,3 +56,20 @@ server {
     }
 }
 ```
+
+## systemd service configuration
+
+```
+[Unit]
+Description=Smart Home System
+Wants=network-online.target
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/npm start
+Environment=NODE_ENV=production
+WorkingDirectory=/opt/smart-home-system/backend/
+
+[Install]
+WantedBy=multi-user.target
+```
