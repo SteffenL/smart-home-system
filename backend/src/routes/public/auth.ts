@@ -1,6 +1,25 @@
+import * as crypto from "crypto";
 import * as express from "express";
 import { AppConfig } from "../../config/types";
 import { checkNetworkTrust } from "../../middleware/check-network-trust";
+
+function validatePassword(password: string, passwordHash: string, pepper: string): boolean {
+    const [iterationsString, algorithm, saltBase64, keyBase64] = passwordHash.split(":");
+    const iterations = parseInt(iterationsString);
+
+    const salt = Buffer.from(saltBase64, "base64");
+    const key = Buffer.from(keyBase64, "base64");
+    const keyLength = key.byteLength;
+
+    const hmac = crypto.createHmac(algorithm, pepper);
+    hmac.update(password);
+    const hmacDigest = hmac.digest();
+
+    const calculatedKey = crypto.pbkdf2Sync(hmacDigest, salt, iterations, keyLength, algorithm);
+    const keysMatch = Buffer.compare(key, calculatedKey) === 0;
+
+    return keysMatch;
+}
 
 export default (appConfig: AppConfig) => {
     const router = express.Router();
@@ -30,9 +49,10 @@ export default (appConfig: AppConfig) => {
     });
 
     router.post("/login/local", (req, res) => {
-        const user = appConfig.login.local.users.find(user => user.username === req.body.username);
+        const user = appConfig.data.users.find(user => user.username === req.body.username);
+        const pepper = appConfig.login.local.passwordPolicy.pepper;
 
-        if (!user || user.password !== req.body.password) {
+        if (!user || !validatePassword(req.body.password, user.passwordHash, pepper)) {
             res.status(401);
             res.render("auth/local_login", {
                 failed: true,

@@ -73,11 +73,14 @@ export type DelayAction = {
 
 export type Action = CommandAction | DelayAction;
 
-export interface Schedule {
+export type Schedule = {
     actions: Action[];
     id: string;
     when: string;
     timeZone?: string;
 };
 
-export interface User {};
+export type User = {
+    username: string;
+    passwordHash: string;
+};

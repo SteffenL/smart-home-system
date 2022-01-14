@@ -1,4 +1,4 @@
-import { Device, Schedule } from "@langnes/smart-home-system-shared/domain";
+import { Device, Schedule, User } from "@langnes/smart-home-system-shared/domain";
 
 export type SessionConfig = {
     namePrefix: string;
@@ -12,13 +12,15 @@ export type HttpServerConfig = {
     useSecureCookies: boolean;
 };
 
-export type UserConfig = {
-    username: string;
-    password: string;
+export type PasswordPolicyConfig = {
+    salt: string;
+    iterations: number;
+    algorithm: string;
+    pepper: string;
 };
 
 export type LocalLoginConfig = {
-    users: UserConfig[];
+    passwordPolicy: PasswordPolicyConfig
 };
 
 export type NetworkLoginConfig = {
@@ -33,6 +35,7 @@ export type LoginConfig = {
 export type AppData = {
     devices: Device[];
     schedules: Schedule[];
+    users: User[];
 };
 
 export type RedisConfig = {
