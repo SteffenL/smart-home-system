@@ -1,18 +1,17 @@
 import * as connectRedis from "connect-redis";
 import * as expressSession from "express-session";
-import redisClient from "./redis-client";
-import { AppConfig, SessionConfig } from "./types";
+import { RedisClient } from "redis";
+import { HttpServerConfig, SessionConfig } from "../config/types";
 
 const RedisStore = connectRedis(expressSession);
 
-export default (appConfig: AppConfig) => {
-    const sessionConfig = appConfig.session;
+export default (sessionConfig: SessionConfig, httpServerConfig: HttpServerConfig, redisClient: RedisClient) => {
     return expressSession({
         cookie: {
             httpOnly: true,
             maxAge: 86400000,
             sameSite: "strict",
-            secure: appConfig.httpServer.useSecureCookies
+            secure: httpServerConfig.useSecureCookies
         },
         name: "_session",
         resave: false,

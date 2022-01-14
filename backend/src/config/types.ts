@@ -35,9 +35,15 @@ export type AppData = {
     schedules: Schedule[];
 };
 
+export type RedisConfig = {
+    hostname: string;
+    port: number;
+};
+
 export type AppConfig = {
     data: AppData;
     httpServer: HttpServerConfig;
+    redis: RedisConfig;
     login: LoginConfig;
     session: SessionConfig;
     timeZone: string;
