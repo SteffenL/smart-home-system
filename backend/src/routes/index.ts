@@ -11,7 +11,7 @@ export default (appConfig: AppConfig) => {
     router.use(publicRoutes(appConfig));
     router.use(requireAuthentication());
     router.use("/api", apiRoutes(appConfig));
-    router.use(csrf(appConfig));
+    router.use(csrf(appConfig.httpServer.useSecureCookies));
     router.use(protectedRoutes(appConfig));
     return router;
 };
