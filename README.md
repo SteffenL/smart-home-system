@@ -18,8 +18,10 @@ npm run scss:dev
 
 ### backend
 
+```
 npm install
 npm run dev
+```
 
 ## Production
 
@@ -32,8 +34,10 @@ npm run build
 
 ### backend
 
+```
 npm ci
 npm start
+```
 
 ## nginx reverse proxy config
 
