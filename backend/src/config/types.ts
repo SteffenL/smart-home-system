@@ -40,4 +40,5 @@ export type AppConfig = {
     httpServer: HttpServerConfig;
     login: LoginConfig;
     session: SessionConfig;
+    timeZone: string;
 };

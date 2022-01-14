@@ -77,6 +77,7 @@ export interface Schedule {
     actions: Action[];
     id: string;
     when: string;
+    timeZone?: string;
 };
 
 export interface User {};

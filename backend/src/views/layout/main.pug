@@ -22,7 +22,8 @@ html(lang="en")
           .navbar-start
             a.navbar-item(href="/") Dashboard
           .navbar-end
-            .navbar-item
+            .navbar-item(title="Server time zone")= appConfig.timeZone
+            .navbar-item(title="Your username")
               if user
                 .is-hidden-touch= user.username
             .navbar-item
