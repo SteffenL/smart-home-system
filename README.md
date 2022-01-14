@@ -2,8 +2,9 @@
 
 ## Prerequisites
 
-* Node.js
-* Redis Server
+* Node.js >= 10 (runtime)
+* Node.js >= 12 (building)
+* Redis Server (tested version 5)
 
 ## Development
 
