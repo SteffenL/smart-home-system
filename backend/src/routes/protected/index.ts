@@ -37,7 +37,7 @@ export default (appConfig: AppConfig) => {
         }
     }
 
-    appConfig.data.schedules.forEach(schedule => {
+    appConfig.data.schedules.filter(schedule => schedule.enabled).forEach(schedule => {
         const timeZone = schedule.timeZone || appConfig.timeZone;
         const job = new CronJob(schedule.when, async () => {
             for (const action of schedule.actions) {

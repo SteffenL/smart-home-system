@@ -75,6 +75,7 @@ export type Action = CommandAction | DelayAction;
 
 export type Schedule = {
     actions: Action[];
+    enabled: boolean;
     id: string;
     when: string;
     timeZone?: string;
