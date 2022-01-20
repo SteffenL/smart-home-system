@@ -35,15 +35,17 @@ export type PlugDeviceState = {
     relayState: boolean;
 }
 
+export type DeviceState = PlugDeviceState;
+
 export type Device = {
     type: DeviceType;
     id: string;
     name: string;
     address: string;
-    vendor: {
+    /*vendor: {
         systemInfo: VendorSystemInfo;
-    },
-    state: PlugDeviceState
+    },*/
+    state: DeviceState
 };
 
 export enum ActionType {
@@ -77,8 +79,9 @@ export type Schedule = {
     actions: Action[];
     enabled: boolean;
     id: string;
-    when: string;
+    name: string;
     timeZone?: string;
+    when: string;
 };
 
 export type User = {

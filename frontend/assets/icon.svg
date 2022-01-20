@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:document-units="mm"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="2.5620932"
+     inkscape:cx="160.22056"
+     inkscape:cy="186.56621"
+     inkscape:window-width="3768"
+     inkscape:window-height="2133"
+     inkscape:window-x="72"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid846" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="fill:#5f5f5f;stroke:#636363;stroke-width:1.30564;stroke-linejoin:round"
+       id="path848"
+       cx="50"
+       cy="50.000004"
+       rx="49.347176"
+       ry="49.347179" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:19.05px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="49.300079"
+       y="44.302158"
+       id="text7488"><tspan
+         sodipodi:role="line"
+         id="tspan7486"
+         style="font-size:19.05px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="49.300079"
+         y="44.302158">Smart</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:19.05px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="49.300079"
+         y="68.114655"
+         id="tspan13448">Home</tspan></text>
+  </g>
+</svg>

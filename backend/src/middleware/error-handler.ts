@@ -8,19 +8,19 @@ export default () => (err: any, req: express.Request, res: express.Response, nex
     if (err) {
         if (httpErrors.isHttpError(err)) {
             const httpError = err as httpErrors.HttpError;
-            const codeToViewMap: { [key: number]: string } = {
+            const codeToMessageMap: { [key: number]: string } = {
                 401: "unauthorized",
                 403: "forbidden"
             };
-            const view = codeToViewMap[httpError.statusCode];
-            if (view) {
+            const message = codeToMessageMap[httpError.statusCode];
+            if (message) {
                 res.status(httpError.statusCode);
-                res.render(`error/${view}`);
+                res.json({ error: { message: message }});
                 return;
             }
         }
         console.error(err);
     }
     res.status(500);
-    res.render("error/unexpected");
+    res.json(null);
 };

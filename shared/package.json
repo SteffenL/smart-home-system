@@ -8,8 +8,7 @@
   },
   "author": "Steffen André Langnes",
   "license": "UNLICENSED",
-  "dependencies": {
-  },
   "devDependencies": {
+    "dtsgenerator": "^3.13.2"
   }
 }

@@ -3,6 +3,7 @@ import { Device, Schedule, User } from "@langnes/smart-home-system-shared/domain
 export type SessionConfig = {
     namePrefix: string;
     secret: string;
+    cookieName: string;
 };
 
 export type HttpServerConfig = {

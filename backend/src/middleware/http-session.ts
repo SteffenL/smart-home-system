@@ -13,7 +13,7 @@ export default (sessionConfig: SessionConfig, httpServerConfig: HttpServerConfig
             sameSite: "strict",
             secure: httpServerConfig.useSecureCookies
         },
-        name: "_session",
+        name: sessionConfig.cookieName,
         resave: false,
         rolling: true,
         saveUninitialized: false,

@@ -11,7 +11,7 @@
   "author": "Steffen André Langnes",
   "license": "UNLICENSED",
   "dependencies": {
-    "@langnes/smart-home-system-frontend-assets": "file:../frontend-assets",
+    "@langnes/smart-home-system-frontend": "file:../frontend",
     "@langnes/smart-home-system-shared": "file:../shared",
     "connect-redis": "^6.0.0",
     "cookie-parser": "^1.4.6",

@@ -1,5 +1,5 @@
 import * as net from "net";
-import { AbstractTask, TaskCallback, TaskScheduler } from "../task";
+import { AbstractTask, TaskCallback, TaskScheduler } from "@langnes/smart-home-system-shared/task";
 import { Device } from "@langnes/smart-home-system-shared/domain";
 
 export interface ApiParams {
